@@ -1,0 +1,65 @@
+[
+    {
+        "_id": "642c155b2c4774f05c36eeaa",
+        "class_name": "Clay Art",
+        "description": "Learn the art of creating beautiful sculptures using clay. Explore various techniques and unleash your creativity in sculpting.",
+        "image": "https://i.ibb.co/c33R1gw/clay-art.jpg",
+        "number_of_students": 230,
+        "available_seats": 20,
+        "price": 450
+    },
+    {
+        "_id": "a3b21d4e5f678901g23h45i6",
+        "class_name": "Bamboo Craft",
+        "description": "Discover the art of creating beautiful crafts using bamboo. Learn different techniques and create sustainable masterpieces.",
+        "image": "https://i.ibb.co/YN3gsnh/craft-with-bamboo.jpg",
+        "number_of_students": 150,
+        "available_seats": 10,
+        "price": 300
+    },
+    {
+        "_id": "j4k56l78m90n12o34p56q7r8",
+        "class_name": "Paint on Guitar",
+        "description": "Learn to customize your own guitar with paint. Explore various painting techniques and create a personalized masterpiece.",
+        "image": "https://i.ibb.co/bmF3M73/art-on-guiter.jpg",
+        "number_of_students": 90,
+        "available_seats": 5,
+        "price": 200
+    },
+    {
+        "_id": "s9t87u65v43w21x12y34z56a",
+        "class_name": "DIY Plate Art and Craft",
+        "description": "Get creative with plate art and craft. Learn various decorative techniques to transform plain plates into unique works of art.",
+        "image": "https://i.ibb.co/Vg3xcQk/DIy-plate-art-and-craft.jpg",
+        "number_of_students": 100,
+        "available_seats": 30,
+        "price": 600
+    },
+    {
+        "_id": "b1c23d45e67f89g01h23i45j6",
+        "class_name": "Fabric Painting",
+        "description": "Unleash your creativity with fabric painting. Learn different techniques to paint on fabric and create personalized designs.",
+        "image": "https://i.ibb.co/vvQhtd8/Fabric-print.jpg",
+        "number_of_students": 50,
+        "available_seats": 15,
+        "price": 400
+    },
+    {
+        "_id": "k7l89m01n23o45p67q89r01s2",
+        "class_name": "Embroidery",
+        "description": "Learn the art of embroidery and create beautiful designs on fabric. Explore different stitches and techniques to embellish your projects.",
+        "image": "https://i.ibb.co/qkKL7qT/embroidery.jpg",
+        "number_of_students": 80,
+        "available_seats": 8,
+        "price": 250
+    },
+    {
+        "_id": "d2e34f56g78h90i12j34k56l",
+        "class_name": "Woodcarving",
+        "description": "Discover the art of woodcarving and create intricate designs on wood. Learn various carving techniques and bring your ideas to life.",
+        "image": "https://i.ibb.co/JC2vc0h/bigginer-paint.jpg",
+        "number_of_students": 40,
+        "available_seats": 5,
+        "price": 350
+    }
+]
