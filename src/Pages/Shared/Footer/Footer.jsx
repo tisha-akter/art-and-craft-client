@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="footer p-10 bg-neutral text-neutral-content">
                 <div>
                     <h2 className="text-3xl font-bold font-serif"><span className="text-purple-500">A</span><span className="text-purple-400">r</span><span className="text-purple-300">t</span> & <span className="text-violet-200">C</span><span className="text-violet-300">r</span><span className="text-violet-400">a</span><span className="text-violet-500">f</span><span className="text-violet-600">t</span></h2>
-                    <p>Art & craft SchoolArt & craft School Ltd.<br />Providing reliable art & craft education since 1992</p>
+                    <p>Art & craft School Ltd.<br />Providing reliable art & craft education since 1992</p>
                 </div>
                 <div>
                     <span className="footer-title">Contact us</span>
