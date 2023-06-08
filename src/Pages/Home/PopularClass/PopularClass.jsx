@@ -35,12 +35,12 @@ const PopularClass = () => {
                             <img src={classData.image} alt="Shoes" className="rounded-xl" />
                         </figure>
                         <div className="card-body">
-                            <h2 className="text-center text-2xl font-serif text-violet-500 font-bold">{classData.class_name}</h2>
-                            <p className="text-gray-500">{classData.description}</p>
+                            <h2 className="text-center text-xl font-serif font-bold">{classData.class_name}</h2>
+                            <p className="text-gray-700">{classData.description}</p>
                             
-                                <h5 className="text-xl  text-gray-600">Number of students: {classData.number_of_students}</h5>
-                                <h5 className="text-xl text-gray-600 ">Available seats: {classData.available_seats}</h5>
-                                <h5 className="text-xl  text-gray-600">Cost : {classData.price}$</h5>
+                                <h5><span className="font-bold  text-gray-500"> Number of students: </span>{classData.number_of_students}</h5>
+                                <h5><span className="font-bold  text-gray-500">Available seats: </span> {classData.available_seats}</h5>
+                                <h5><span className="font-bold  text-gray-500">Cost : </span>{classData.price}$</h5>
 
                             <div className="my-3 text-center items-center">
                                 <button className="btn btn-primary btn-sm bg-violet-500 ">Enroll now!!</button>
