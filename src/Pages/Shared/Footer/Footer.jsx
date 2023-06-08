@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
             <div className="footer-center p-4 bg-base-300 text-base-content">
                 <div>
-                    <p>Copyright © 2023 - All right reserved by Art & craft SchoolArt & craft School Ltd</p>
+                    <p>Copyright © 2023 - All right reserved by Art & craft School Ltd</p>
                 </div>
             </div>
         </footer>
