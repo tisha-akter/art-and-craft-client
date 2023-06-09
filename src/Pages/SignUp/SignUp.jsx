@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import pic from '../../assets/login/Wavy_Gen-01_Single-07.jpg'
+import SocialLogin from "../../Componets/Social/SocialLogin";
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
@@ -91,6 +92,7 @@ const SignUp = () => {
                             <p><small>Already have an account?
                                 <Link to="/login">Login Now</Link>
                             </small></p>
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                 </div>

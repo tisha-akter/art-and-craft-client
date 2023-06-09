@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import pic from '../assets/login/Wavy_Gen-01_Single-07.jpg'
 import { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import SocialLogin from '../Componets/Social/SocialLogin';
 
 const Login = () => {
 
@@ -75,6 +76,7 @@ const Login = () => {
                             <p><small>Do not have any account?
                                 <Link to="/signup">Sign Up</Link>
                             </small></p>
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                 </div>
