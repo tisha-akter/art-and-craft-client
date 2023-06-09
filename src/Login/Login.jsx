@@ -63,9 +63,6 @@ const Login = () => {
                                     </div>
 
                                     {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
-                                    {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
-                                    {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one upper case, one lower case, one number &one special character</p>}
-                                    {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
                                 </div>
 
                                 <div className="form-control mt-6">

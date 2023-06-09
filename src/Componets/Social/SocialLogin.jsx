@@ -5,8 +5,8 @@ const SocialLogin = () => {
         <div>
             <div className="divider"></div>
             <div className="w-full text-center my-4">
-                <button  className="btn btn-circle btn-outline">
-                    <FaGoogle></FaGoogle>
+                <button  className="btn btn-circle text-xl">
+                    <FaGoogle className="text-red-600"></FaGoogle>
                 </button>
             </div>
         </div>

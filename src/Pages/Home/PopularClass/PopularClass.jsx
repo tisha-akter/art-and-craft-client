@@ -1,26 +1,33 @@
-import { useEffect, useState } from "react";
+
 import Cover from "../../Shared/Cover/Cover";
 
 import img from '../../../assets/Home/cover1.jpeg';
+import usePopularInfo from "../../../hooks/usePopularInfo";
 
 
 const PopularClass = () => {
 
-    const [popularClass, setPopularClass] = useState([]);
-    useEffect(() => {
-        fetch('popularclass.json')
-            .then(res => res.json())
-            .then((data) => {
-                // Sort the classes based on the number of students
-                const sortedClasses = data.sort((a, b) => b.number_of_students - a.number_of_students);
+    const [popularInfo] = usePopularInfo();
 
-                const topClasses = sortedClasses.slice(0, 6);
-                setPopularClass(topClasses);
-            })
-            .catch((error) => {
-                console.error('Error fetching data from JSON:', error);
-            });
-    }, [])
+    const sortedClasses = popularInfo.sort((a, b) => b.number_of_students - a.number_of_students);
+    const topClasses = sortedClasses.slice(0, 6);
+    
+
+    // const [popularInfo, setPopularInfo] = useState([]);
+    // useEffect(() => {
+    //     fetch('popularclass.json')
+    //         .then(res => res.json())
+    //         .then((data) => {
+    //             // Sort the classes based on the number of students
+    //             const sortedClasses = data.sort((a, b) => b.number_of_students - a.number_of_students);
+
+    //             const topClasses = sortedClasses.slice(0, 6);
+    //             setPopularInfo(topClasses);
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error fetching data from JSON:', error);
+    //         });
+    // }, [])
 
 
     return (
@@ -32,7 +39,7 @@ const PopularClass = () => {
             <Cover img={img}></Cover>
             <div className="grid md:grid-cols-3 gap-14 mx-auto">
 
-                {popularClass.map(classData => (
+                {topClasses.map(classData => (
                     <div className="card w-96 bg-base-100 shadow-xl" key={classData._id}>
                         <figure className="px-10 pt-10">
                             <img src={classData.image} alt="Shoes" className="rounded-xl" />
