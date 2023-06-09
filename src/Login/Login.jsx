@@ -1,14 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import pic from '../assets/login/Wavy_Gen-01_Single-07.jpg'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import SocialLogin from '../Componets/Social/SocialLogin';
+import { AuthContext } from '../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+
+    const { login } = useContext(AuthContext);
 
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
@@ -16,6 +24,19 @@ const Login = () => {
 
     const handleLogin = (data) => {
         console.log(data);
+        login(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'User created successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(from, { replace: true });
+            })
     };
 
     return (

@@ -1,16 +1,23 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
 
     const navOptions = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
         <li><Link to='/classes'>Classes</Link></li>
-        
-    
-
     </>
 
 
@@ -34,7 +41,30 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* <a className="btn">Get started</a> */}
+                    {user ?
+                        (
+                            <div title={user.email}>
+
+                                {user.photoURL ?
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-8 md:w-10 rounded-full">
+                                            <img src={user.photoURL} />
+                                        </div>
+                                    </label>
+                                    :
+                                    <FaUserCircle className='text-4xl'></FaUserCircle>
+                                }
+
+                            </div>
+                        ) :
+                        (
+                            <Link to="/login">
+                                <button className='btn btn-sm bg-violet-500'>Login</button>
+                            </Link>
+                        )}
+                    {user && (
+                        <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                    )}
                 </div>
             </div>
         </div>
