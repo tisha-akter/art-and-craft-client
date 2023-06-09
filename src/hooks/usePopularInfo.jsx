@@ -5,7 +5,7 @@ const usePopularInfo = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('popularclass.json')
+        fetch('http://localhost:5000/classesInfo')
             .then(res => res.json())
             .then(data =>{ 
                 setPopularInfo(data)
