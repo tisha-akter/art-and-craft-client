@@ -6,7 +6,10 @@
         "image": "https://i.ibb.co/c33R1gw/clay-art.jpg",
         "number_of_students": 230,
         "available_seats": 20,
-        "price": 450
+        "price": 450,
+        "instruc_name": "John Doe",
+        "instruc_img": "https://i.ibb.co/FXyhZjG/pexels-mikhail-nilov-8872158.jpg",
+        "email": "john.doe@example.com"
     },
     {
         "_id": "a3b21d4e5f678901g23h45i6",
@@ -15,7 +18,10 @@
         "image": "https://i.ibb.co/YN3gsnh/craft-with-bamboo.jpg",
         "number_of_students": 150,
         "available_seats": 10,
-        "price": 300
+        "price": 300,
+        "instruc_name": "Jane Smith",
+        "instruc_img": "https://i.ibb.co/7bGzBJh/pexels-fauxels-3184405.jpg",
+        "email": "jane.smith@example.com"
     },
     {
         "_id": "j4k56l78m90n12o34p56q7r8",
@@ -24,7 +30,10 @@
         "image": "https://i.ibb.co/bmF3M73/art-on-guiter.jpg",
         "number_of_students": 90,
         "available_seats": 5,
-        "price": 200
+        "price": 200,
+        "instruc_name": "Michael Johnson",
+        "instruc_img": "https://i.ibb.co/rZ69b9Y/pexels-andrea-piacquadio-3974773.jpg",
+        "email": "michael.johnson@example.com"
     },
     {
         "_id": "s9t87u65v43w21x12y34z56a",
@@ -33,7 +42,10 @@
         "image": "https://i.ibb.co/Vg3xcQk/DIy-plate-art-and-craft.jpg",
         "number_of_students": 100,
         "available_seats": 30,
-        "price": 600
+        "price": 600,
+        "instruc_name": "Emily Davis",
+        "instruc_img": "https://i.ibb.co/KxCtbv8/pexels-andrea-piacquadio-3760263.jpg",
+        "email": "emily.davis@example.com"
     },
     {
         "_id": "b1c23d45e67f89g01h23i45j6",
@@ -42,7 +54,10 @@
         "image": "https://i.ibb.co/vvQhtd8/Fabric-print.jpg",
         "number_of_students": 50,
         "available_seats": 15,
-        "price": 400
+        "price": 400,
+        "instruc_name": "David Brown",
+        "instruc_img": "https://i.ibb.co/5rJDxLn/pexels-moose-photos-1036622.jpg",
+        "email": "david.brown@example.com"
     },
     {
         "_id": "k7l89m01n23o45p67q89r01s2",
@@ -51,7 +66,10 @@
         "image": "https://i.ibb.co/qkKL7qT/embroidery.jpg",
         "number_of_students": 80,
         "available_seats": 8,
-        "price": 250
+        "price": 250,
+        "instruc_name": "Sarah Wilson",
+        "instruc_img": "https://i.ibb.co/VDQfMjH/pexels-moose-photos-1036623.jpg",
+        "email": "sarah.wilson@example.com"
     },
     {
         "_id": "d2e34f56g78h90i12j34k56l",
@@ -60,6 +78,9 @@
         "image": "https://i.ibb.co/JC2vc0h/bigginer-paint.jpg",
         "number_of_students": 40,
         "available_seats": 5,
-        "price": 350
+        "price": 350,
+        "instruc_name": "Alex Johnson",
+        "instruc_img": "https://i.ibb.co/DGv7XFL/pexels-emmy-e-2381069.jpg",
+        "email": "alex.johnson@example.com"
     }
 ]
