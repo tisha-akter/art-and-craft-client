@@ -1,12 +1,13 @@
-import usePopularInfo from "../../../hooks/usePopularInfo";
+import useClassesInfo from "../../../hooks/useClassesInfo";
+
 
 
 const PopularInstructor = () => {
 
 
-    const [popularInfo] = usePopularInfo();
+    const [classesInfo] = useClassesInfo();
 
-    const sortedClasses = popularInfo.sort((a, b) => b.number_of_students - a.number_of_students);
+    const sortedClasses = classesInfo.sort((a, b) => b.number_of_students - a.number_of_students);
     const topInstructors = sortedClasses.slice(0, 6);
 
 

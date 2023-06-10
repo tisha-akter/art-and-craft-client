@@ -2,18 +2,20 @@
 import Cover from "../../Shared/Cover/Cover";
 
 import img from '../../../assets/Home/cover1.jpeg';
-import usePopularInfo from "../../../hooks/usePopularInfo";
+import useClassesInfo from "../../../hooks/useClassesInfo";
+
 
 
 const PopularClass = () => {
 
-    const [popularInfo] = usePopularInfo();
+    const [classesInfo] = useClassesInfo();
 
-    const sortedClasses = popularInfo.sort((a, b) => b.number_of_students - a.number_of_students);
+    const sortedClasses = classesInfo.sort((a, b) => b.number_of_students - a.number_of_students);
+
     const topClasses = sortedClasses.slice(0, 6);
     
 
-    // const [popularInfo, setPopularInfo] = useState([]);
+    // const [classesInfo, setClassesInfo] = useState([]);
     // useEffect(() => {
     //     fetch('popularclass.json')
     //         .then(res => res.json())
@@ -22,7 +24,7 @@ const PopularClass = () => {
     //             const sortedClasses = data.sort((a, b) => b.number_of_students - a.number_of_students);
 
     //             const topClasses = sortedClasses.slice(0, 6);
-    //             setPopularInfo(topClasses);
+    //             setClassesInfo(topClasses);
     //         })
     //         .catch((error) => {
     //             console.error('Error fetching data from JSON:', error);
