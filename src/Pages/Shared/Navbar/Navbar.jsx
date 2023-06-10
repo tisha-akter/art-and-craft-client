@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import { FaUserCircle } from "react-icons/fa";
+import { FaCartArrowDown, FaUserCircle } from "react-icons/fa";
+import useSelectedClass from "../../../hooks/useSelectedClass";
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [classCart] = useSelectedClass();
 
     const handleLogOut = () => {
         logOut()
@@ -18,7 +20,15 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
         <li><Link to='/classes'>Classes</Link></li>
-       
+        <li>
+            <Link to="/dashboard/my-selected-class">
+                <button className="btn btn-sm">
+                    <FaCartArrowDown></FaCartArrowDown>
+                    <div className="badge badge-secondary text-sm">+{classCart?.length || 0}</div>
+                </button>
+            </Link>
+        </li>
+
     </>
 
 
