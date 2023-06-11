@@ -86,7 +86,7 @@ const Classes = () => {
             <div className="grid md:grid-cols-3 gap-14 mx-auto mb-20">
 
                 {sortedClasses.map((classes) => (
-                    <div className={`card w-96 ${classes.available_seats == 0 ? "bg-red-500" : "bg-base-100"
+                    <div className={`card w-96 ${classes.available_seats == 0 ? "bg-red-400" : "bg-base-100"
                         } shadow-xl`}
                         key={classes._id}
                     >
@@ -97,10 +97,10 @@ const Classes = () => {
 
                             <h2 className="text-center text-xl font-serif font-bold mb-4">{classes.class_name}</h2>
 
-                            <h5><span className="font-bold  text-gray-500"> Instructor name: </span>{classes.instruc_name}</h5>
-                            <h5><span className="font-bold  text-gray-500"> Number of students: </span>{classes.number_of_students}</h5>
-                            <h5><span className="font-bold  text-gray-500">Available seats: </span> {classes.available_seats}</h5>
-                            <h5><span className="font-bold  text-gray-500">Price : </span>{classes.price}$</h5>
+                            <h5><span className="font-bold  text-gray-700"> Instructor name: </span>{classes.instruc_name}</h5>
+                            <h5><span className="font-bold  text-gray-700"> Number of students: </span>{classes.number_of_students}</h5>
+                            <h5><span className="font-bold  text-gray-700">Available seats: </span> {classes.available_seats}</h5>
+                            <h5><span className="font-bold  text-gray-700">Price : </span>{classes.price}$</h5>
 
                             <div className="my-3 text-center items-center">
                                 {classes.available_seats == 0 || isAdmin || isInstructor  ? (

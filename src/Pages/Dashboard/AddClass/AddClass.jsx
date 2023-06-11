@@ -9,6 +9,7 @@ const AddClass = () => {
     const instructor = {
         displayName: user?.displayName || '',
         email: user?.email || '',
+        photoURL: user?.photoURL || '',
     };
 
     const onSubmit = data => {
@@ -20,24 +21,24 @@ const AddClass = () => {
             available_seats: data.available_seats,
             price: data.price,
             instruc_name: instructor.displayName,
-            instruc_img: instructor.image,
             email: instructor.email,
+            instruc_img: instructor.photoURL,
         };
 
-        fetch('http://localhost:5000/classesInfo', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newClass),
+         fetch('http://localhost:5000/classesInfo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newClass),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Class created successfully:', data);
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Class created successfully:', data);
-            })
-            .catch(error => {
-                console.error('Error creating class:', error);
-            });
+        .catch(error => {
+            console.error('Error creating class:', error);
+        });
     };
 
     return (
@@ -45,7 +46,7 @@ const AddClass = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control mb-4 mx-4">
                     <label className="label">
-                        <span className="label-text font-semibold">Instructor Name*</span>
+                        <span className="label-text font-semibold">Instructor Name</span>
                     </label>
                     <input
                         type="text"
@@ -53,6 +54,19 @@ const AddClass = () => {
                         value={instructor.displayName}
                         readOnly
                         className="input input-bordered"
+                    />
+                </div>
+
+                <div className="form-control mb-4 mx-4">
+                    <label className="label">
+                        <span className="label-text font-semibold">Instructor Photo</span>
+                    </label>
+                    <input
+                          type="text"
+                          placeholder="Instructor Photo"
+                          value={instructor.photoURL}
+                          readOnly
+                          className="input input-bordered"
                     />
                 </div>
 

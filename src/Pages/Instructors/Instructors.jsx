@@ -4,7 +4,15 @@ import useClassesInfo from "../../hooks/useClassesInfo";
 const Instructors = () => {
 
     const [classesInfo, loading] = useClassesInfo();
-    const sortedClasses = classesInfo.sort((a, b) => b.number_of_students - a.number_of_students);
+
+    const filteredClasses  = classesInfo.reduce((uniqueClasses, instructor) => {
+        const emailExists = uniqueClasses.some((c) => c.email === instructor.email);
+        if (!emailExists) {
+          uniqueClasses.push(instructor);
+        }
+        return uniqueClasses;
+      }, []);
+    const sortedClasses = filteredClasses.sort((a, b) => b.number_of_students - a.number_of_students);
 
     if (loading) {
         return (
