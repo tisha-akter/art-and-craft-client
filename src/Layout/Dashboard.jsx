@@ -4,7 +4,7 @@ import useSelectedClass from "../hooks/useSelectedClass";
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 import Footer from "../Pages/Shared/Footer/Footer";
 import useAdmin from "../hooks/useAdmin";
-import useInstructor from "../hooks/useInstructor";
+// import useInstructor from "../hooks/useInstructor";
 
 
 const Dashboard = () => {
@@ -13,7 +13,8 @@ const Dashboard = () => {
     // const isAdmin = true;
     const [isAdmin] = useAdmin();
 
-    const [isInstructor] = useInstructor();
+    // const [isInstructor] = useInstructor();
+    const isInstructor = true;
 
 
     return (

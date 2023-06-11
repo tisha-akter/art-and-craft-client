@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useSelectedClass from "../../hooks/useSelectedClass";
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Classes = () => {
@@ -15,13 +16,16 @@ const Classes = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    const [isAdmin] = useAdmin();
+    const isInstructor = true;
+
 
     const sortedClasses = classesInfo.sort((a, b) => b.number_of_students - a.number_of_students);
 
     const handleSelectClass = (classes) => {
         console.log(classes)
         if (user && user.email) {
-            const SelectClass = {classId: classes._id, name: classes.class_name, image: classes.image, price: classes.price, email:user.email}
+            const SelectClass = { classId: classes._id, name: classes.class_name, image: classes.image, price: classes.price, email: user.email }
             fetch('http://localhost:5000/selectedClasses', {
                 method: 'POST',
                 headers: {
@@ -81,8 +85,11 @@ const Classes = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-14 mx-auto mb-20">
 
-                {sortedClasses.map((classes, index) => (
-                    <div className="card w-96 bg-base-100 shadow-xl" key={index}>
+                {sortedClasses.map((classes) => (
+                    <div className={`card w-96 ${classes.available_seats == 0 ? "bg-red-500" : "bg-base-100"
+                        } shadow-xl`}
+                        key={classes._id}
+                    >
                         <figure className="px-10 pt-10">
                             <img src={classes.image} alt="Shoes" className="rounded-xl" />
                         </figure>
@@ -96,7 +103,18 @@ const Classes = () => {
                             <h5><span className="font-bold  text-gray-500">Price : </span>{classes.price}$</h5>
 
                             <div className="my-3 text-center items-center">
-                                <button onClick={() => handleSelectClass(classes)} className="btn btn-primary btn-sm bg-violet-500 ">Select the Class</button>
+                                {classes.available_seats == 0 || isAdmin || isInstructor  ? (
+                                    <button className="btn btn-primary btn-sm bg-gray-400" disabled>
+                                        Not Available
+                                    </button>
+                                ) : (
+                                    <button
+                                        onClick={() => handleSelectClass(classes)}
+                                        className="btn btn-primary btn-sm bg-violet-500"
+                                    >
+                                        Select the Class
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>
