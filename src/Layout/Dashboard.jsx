@@ -4,6 +4,7 @@ import useSelectedClass from "../hooks/useSelectedClass";
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 import Footer from "../Pages/Shared/Footer/Footer";
 import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 // import useInstructor from "../hooks/useInstructor";
 
 
@@ -13,8 +14,9 @@ const Dashboard = () => {
     // const isAdmin = true;
     const [isAdmin] = useAdmin();
 
-    // const [isInstructor] = useInstructor();
-    const isInstructor = true;
+    const [isInstructor] = useInstructor();
+    // const isInstructor = true;
+    console.log(isInstructor)
 
 
     return (
@@ -45,7 +47,7 @@ const Dashboard = () => {
                                     <FaHome></FaHome>
                                     Admin Home
                                 </NavLink></li>
-                                <li><NavLink to='/dashboard/home'>
+                                <li><NavLink to='/dashboard/manage-classes'>
                                     <FaBookReader></FaBookReader>
                                     Manage Classes
                                 </NavLink></li>
@@ -84,7 +86,7 @@ const Dashboard = () => {
                                 User Home
                             </NavLink></li>
 
-                            <li><NavLink to='/dashboard/payhistory'>
+                            <li><NavLink to='/dashboard/payment'>
                                 <FaWallet></FaWallet>
                                 Payment history
                             </NavLink>

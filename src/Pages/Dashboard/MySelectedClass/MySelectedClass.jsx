@@ -45,7 +45,7 @@ const MySelectedClass = () => {
 
     return (
         <div>
-            <div className="uppercase font-bold flex justify-evenly">
+            <div className="uppercase font-bold flex justify-evenly mt-20">
                 <h3 className="text-3xl">Total classes: {classCart.length}</h3>
                 <h3 className="text-3xl">Total Price: {total}</h3>
                 <Link to="/dashboard/payment">
@@ -88,7 +88,7 @@ const MySelectedClass = () => {
                                 <td>
                                     {item.email}
                                 </td>
-                                <td className="text-end">${item.price}</td>
+                                <td className="text-end">{item.price} $</td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost "><FaTrashAlt></FaTrashAlt></button>
                                 </td>

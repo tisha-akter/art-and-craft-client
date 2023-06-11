@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useSelectedClass from "../../hooks/useSelectedClass";
 import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 
 const Classes = () => {
@@ -17,7 +18,8 @@ const Classes = () => {
     const location = useLocation();
 
     const [isAdmin] = useAdmin();
-    const isInstructor = true;
+    const [isInstructor] = useInstructor();
+    
 
 
     const sortedClasses = classesInfo.sort((a, b) => b.number_of_students - a.number_of_students);
