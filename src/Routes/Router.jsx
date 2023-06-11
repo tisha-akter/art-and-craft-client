@@ -12,6 +12,7 @@ import Dashboard from "../Layout/Dashboard";
 import MySelectedClass from "../Pages/Dashboard/MySelectedClass/MySelectedClass";
 import PrivateRoute from "./PrivateRoute";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 
 
   
@@ -54,7 +55,12 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
         {
           path: 'allusers',
           element: <AllUsers></AllUsers>
+        },
+        {
+          path: 'add-class',
+          element: <AddClass></AddClass>
         }
+
        
       ]
     },

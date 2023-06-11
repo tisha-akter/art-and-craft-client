@@ -7,7 +7,7 @@ const useSelectedClass = () => {
   
 
     const { refetch, data: classCart = [] } = useQuery({
-        queryKey: ['cart', user?.email],
+        queryKey: ['classCart', user?.email],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/selectedClasses?email=${user?.email}`)
             return res.json();
@@ -19,4 +19,5 @@ const useSelectedClass = () => {
 };
 
 export default useSelectedClass;
+
 
