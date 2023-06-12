@@ -6,16 +6,15 @@ import { useQuery } from "@tanstack/react-query";
 const useInstructor = () => {
     const { user} = useContext(AuthContext);
     
-    const { refetch, data: role, isLoading: isInstructor = [] } = useQuery({
-        queryKey: ['role', user?.email],
+    const { refetch, data: InsRole, isLoading: isInstructorLoading = [] } = useQuery({
+        queryKey: ['InsRole', user?.email],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/users/instructor/${user?.email}`)
-            console.log('is instru res', res)
             return res.json();
         },
       })
 
-      return [role?.instructor, refetch, isInstructor]
+      return [InsRole?.instructor, refetch, isInstructorLoading];
 };
 
 export default useInstructor;

@@ -9,7 +9,6 @@ const useAdmin = () => {
         queryKey: ['role', user?.email],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/users/admin/${user?.email}`)
-            console.log('is admim res', res)
             return res.json();
         },
       })

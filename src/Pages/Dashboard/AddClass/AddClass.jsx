@@ -23,6 +23,7 @@ const AddClass = () => {
             instruc_name: instructor.displayName,
             email: instructor.email,
             instruc_img: instructor.photoURL,
+            status: 'pending',
         };
 
          fetch('http://localhost:5000/classesInfo', {

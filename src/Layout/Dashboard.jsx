@@ -5,7 +5,6 @@ import Navbar from "../Pages/Shared/Navbar/Navbar";
 import Footer from "../Pages/Shared/Footer/Footer";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
-// import useInstructor from "../hooks/useInstructor";
 
 
 const Dashboard = () => {
@@ -16,8 +15,6 @@ const Dashboard = () => {
 
     const [isInstructor] = useInstructor();
     // const isInstructor = true;
-    console.log(isInstructor)
-
 
     return (
 

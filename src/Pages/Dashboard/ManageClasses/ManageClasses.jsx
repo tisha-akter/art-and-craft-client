@@ -78,12 +78,7 @@ const ManageClasses = () => {
 
                             </tr>)
                         }
-
-
-
                     </tbody>
-
-
                 </table>
             </div>
         </div>
