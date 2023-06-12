@@ -64,14 +64,14 @@ const ManageClasses = () => {
                                
                                <td>
                                 <div>
-                                    Pending
+                                {item.status}
                                 </div>
                                </td>
 
                                 <td>
                                     <div className="">
                                         <button className="btn btn-xs mb-1"> Approve</button>
-                                        <button className="btn btn-xs mb-1">Approve</button>
+                                        <button className="btn btn-xs mb-1">Deny</button>
                                         <button className="btn btn-xs mb-1">feedback </button>
                                     </div>
                                 </td>
