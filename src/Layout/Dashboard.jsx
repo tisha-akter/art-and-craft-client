@@ -1,8 +1,6 @@
 import { FaBookOpen, FaBookReader, FaCartArrowDown, FaHome, FaUserCheck, FaWallet } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useSelectedClass from "../hooks/useSelectedClass";
-import Navbar from "../Pages/Shared/Navbar/Navbar";
-import Footer from "../Pages/Shared/Footer/Footer";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 
@@ -20,7 +18,7 @@ const Dashboard = () => {
 
         <>
             
-                <Navbar></Navbar>
+                {/* <Navbar></Navbar> */}
            
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -33,7 +31,7 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
-                <div className="drawer-side mt-16">
+                <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 pt-10 w-80 h-full  bg-violet-300 text-base-content">
 
@@ -68,7 +66,7 @@ const Dashboard = () => {
                                 <FaBookReader></FaBookReader>
                                 Add a Class
                             </NavLink></li>
-                            <li><NavLink to='/dashboard/allusers'>
+                            <li><NavLink to='/dashboard/my-added-classes'>
                                 <FaBookOpen></FaBookOpen>
                                 My added classes
                             </NavLink></li>
@@ -109,7 +107,7 @@ const Dashboard = () => {
             </div>
 
             <div className="mb-0">
-                <Footer></Footer>
+                {/* <Footer></Footer> */}
             </div>
         </>
     );

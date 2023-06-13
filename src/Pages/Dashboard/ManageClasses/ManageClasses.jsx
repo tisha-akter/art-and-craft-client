@@ -1,86 +1,90 @@
 import Swal from "sweetalert2";
 import useClassesInfo from "../../../hooks/useClassesInfo";
 import { useState } from "react";
+import axios from "axios";
 
 const ManageClasses = () => {
     const [classesInfo, setClassesInfo] = useClassesInfo();
     const [loading, setLoading] = useState(false);
 
+
+    // for approve the class 
     const handleApprove = async (classId) => {
         setLoading(true);
-        try {
-            // Send a PATCH request to update the class status as "approved" in the backend
-            await fetch(`http://localhost:5000/classesInfo/${classId}`, {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ status: "approved" }),
-            });
 
-            // Update the class status in the local state
-            const updatedClasses = classesInfo.map((item) => {
-                if (item._id === classId) {
-                    return { ...item, status: "approved" };
-                }
-                return item;
+        const url = `http://localhost:5000/classesInfo/update/status/${classId}`;
+        const payload = { status: 'approved' };
+
+        try {
+            await axios.patch(url, payload);
+            setLoading(false);
+            
+            Swal.fire({
+                icon: 'success',
+                text: 'Class approved successfully!',
+                timer: 1500,
+                showConfirmButton: false,
             });
-            setClassesInfo(updatedClasses);
         } catch (error) {
-            console.error("Error approving class:", error);
+            console.error('Error approving class:', error);
+            setLoading(false);
+            // Show error message
+            Swal.fire({
+                icon: 'error',
+                text: 'Failed to approve class',
+            });
         }
-        setLoading(false);
     };
 
+
+
+    // for deny the class 
     const handleDeny = async (classId) => {
         setLoading(true);
+
         try {
-            // Send a PATCH request to update the class status as "denied" in the backend
-            await fetch(`http://localhost:5000/classesInfo/${classId}`, {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ status: "denied" }),
+            //  modal for the admin to enter feedback
+            const { value: feedback, dismiss: isCancelled } = await Swal.fire({
+                title: 'Provide Feedback',
+                input: 'text',
+                inputLabel: 'Feedback',
+                inputPlaceholder: 'Enter feedback message (optional)',
+                showCancelButton: true,
+                cancelButtonText: 'Cancel',
+                confirmButtonText: 'Submit',
             });
 
-            // Update the class status in the local state
-            const updatedClasses = classesInfo.map((item) => {
-                if (item._id === classId) {
-                    return { ...item, status: "denied" };
-                }
-                return item;
-            });
-            setClassesInfo(updatedClasses);
+            // if the admin provided feedbak update the class status to denied
+            if (!isCancelled) {
+                const url = `http://localhost:5000/classesInfo/update/status/${classId}`;
+                const payload = {
+                    status: 'denied',
+                    feedback: feedback || '',
+                };
+
+                await axios.patch(url, payload);
+
+                
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Class denied successfully!',
+                    timer: 1500,
+                    showConfirmButton: false,
+                });
+            }
         } catch (error) {
-            console.error("Error denying class:", error);
+            console.error('Error denying class:', error);
+
+            
+            Swal.fire({
+                icon: 'error',
+                text: 'Failed to deny class',
+            });
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
-    const handleSendFeedback = (classId) => {
-        Swal.fire({
-            title: "Send Feedback",
-            text: "Enter your feedback:",
-            input: "textarea",
-            showCancelButton: true,
-            confirmButtonText: "Send",
-            cancelButtonText: "Cancel",
-            preConfirm: (feedback) => {
-                // Handle feedback submission here
-                console.log("Feedback:", feedback);
-                // You can send the feedback and classId to the server or perform any other necessary actions
-                console.log("Class ID:", classId);
-            },
-            allowOutsideClick: () => !Swal.isLoading(),
-            showLoaderOnConfirm: true,
-            inputValidator: (value) => {
-                if (!value) {
-                    return "Feedback is required!";
-                }
-            },
-        });
-    };
 
 
     return (
@@ -115,7 +119,7 @@ const ManageClasses = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    <div>
+                                    <div className="w-24">
                                         <div>{item.class_name}</div>
                                     </div>
                                 </td>
@@ -129,11 +133,11 @@ const ManageClasses = () => {
                                         <div>{item.email}</div>
                                     </div>
                                 </td>
-                                <td className="">
+                                <td className="text-center">
                                     <div>{item.available_seats}</div>
                                 </td>
                                 <td className="">
-                                    <div>{item.price} $</div>
+                                    <div>{item.price}$</div>
                                 </td>
                                 <td>
                                     <div>{item.status}</div>
@@ -158,12 +162,7 @@ const ManageClasses = () => {
                                                 </button>
                                             </>
                                         )}
-                                        <button
-                                            className="btn btn-xs mb-1"
-                                            onClick={() => handleSendFeedback(item._id)}
-                                        >
-                                            Feedback
-                                        </button>
+
                                     </div>
                                 </td>
                             </tr>
