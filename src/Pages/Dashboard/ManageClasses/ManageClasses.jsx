@@ -89,7 +89,11 @@ const ManageClasses = () => {
 
     return (
         <div className="w-full">
-            <div className="overflow-x-auto mt-20">
+             <div className=' text-center font-light text-gray-500 sm:text-lg dark:text-gray-400 py-5 mb-5'>
+                <h1 className="mb-4 text-4xl tracking-tight font-extrabold font-serif text-gray-900 dark:text-white">Manage <span className="text-violet-600">Classes</span></h1>
+                <p>Manage instructor post. You can approve or deny their post.</p>
+            </div>
+            <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -119,7 +123,7 @@ const ManageClasses = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    <div className="w-24">
+                                    <div className="w-28">
                                         <div>{item.class_name}</div>
                                     </div>
                                 </td>
@@ -147,14 +151,14 @@ const ManageClasses = () => {
                                         {item.status === "pending" && (
                                             <>
                                                 <button
-                                                    className="btn btn-xs mb-1"
+                                                    className="btn btn-xs mb-1 text-green-600"
                                                     disabled={loading}
                                                     onClick={() => handleApprove(item._id)}
                                                 >
                                                     Approve
                                                 </button>
                                                 <button
-                                                    className="btn btn-xs mb-1"
+                                                    className="btn btn-xs mb-1 text-red-600"
                                                     disabled={loading}
                                                     onClick={() => handleDeny(item._id)}
                                                 >

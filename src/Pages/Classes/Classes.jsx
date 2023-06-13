@@ -21,7 +21,7 @@ const Classes = () => {
     const [isInstructor] = useInstructor();
     
 
-    const approvedClasses = classesInfo.filter((item) => item.status !== "pending" )
+    const approvedClasses = classesInfo.filter((item) => item.status !== "pending"  && item.status !== "denied" )
     const sortedClasses = approvedClasses.sort((a, b) => b.number_of_students - a.number_of_students);
 
     const handleSelectClass = (classes) => {
