@@ -17,6 +17,9 @@ import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import MyAddedClasses from "../Pages/Dashboard/MyAddedClasses/MyAddedClasses";
+import UpdateAddedClass from "../Pages/Dashboard/MyAddedClasses/UpdateAddedClass/UpdateAddedClass";
+import MyEnrolledClasses from "../Pages/Dashboard/MyEnrolledClasses/MyEnrolledClasses";
 
 
   
@@ -57,6 +60,10 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
           element: <MySelectedClass></MySelectedClass>
         },
         {
+          path: 'enrolled-classes',
+          element: <MyEnrolledClasses></MyEnrolledClasses>
+        },
+        {
           path: 'payment',
           element: <Payment></Payment>
         },
@@ -71,6 +78,15 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
         {
           path: 'add-class',
           element: <AddClass></AddClass>
+        },
+        {
+          path: 'my-added-classes',
+          element: <MyAddedClasses></MyAddedClasses>
+        },
+        {
+          path: 'update-class/:id',
+          element: <UpdateAddedClass></UpdateAddedClass>,
+          loader: ({params}) => fetch(`https://summer-camp-scl-server-tisha-akter.vercel.app/classesInfo/update/${params.id}`)
         }
 
        

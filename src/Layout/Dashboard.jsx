@@ -17,9 +17,9 @@ const Dashboard = () => {
     return (
 
         <>
-            
-                {/* <Navbar></Navbar> */}
-           
+
+            {/* <Navbar></Navbar> */}
+
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content mt-12">
@@ -53,53 +53,67 @@ const Dashboard = () => {
 
                             </>
 
-                               
+
                         }
 
                         {
                             isInstructor && <>
-                            <li><NavLink to='/dashboard/instructor-home'>
+                                <li><NavLink to='/'>
+                                    <FaHome></FaHome>
+                                    Instructor Home
+                                </NavLink></li>
+                                {/* <li><NavLink to='/dashboard/instructor-home'>
                                 <FaHome></FaHome>
                                 Instructor Home
-                            </NavLink></li>
-                            <li><NavLink to='/dashboard/add-class'>
-                                <FaBookReader></FaBookReader>
-                                Add a Class
-                            </NavLink></li>
-                            <li><NavLink to='/dashboard/my-added-classes'>
-                                <FaBookOpen></FaBookOpen>
-                                My added classes
-                            </NavLink></li>
-                        </>
+                            </NavLink></li> */}
+                                <li><NavLink to='/dashboard/add-class'>
+                                    <FaBookReader></FaBookReader>
+                                    Add a Class
+                                </NavLink></li>
+                                <li><NavLink to='/dashboard/my-added-classes'>
+                                    <FaBookOpen></FaBookOpen>
+                                    My added classes
+                                </NavLink></li>
+                            </>
                         }
 
                         {
                             !isAdmin && !isInstructor ? <>
-                            {/* Sidebar content here */}
-                            <li><NavLink to='/dashboard/home'>
-                                <FaHome></FaHome>
-                                User Home
-                            </NavLink></li>
+                                {/* Sidebar content here */}
+                                <li><NavLink to='/dashboard/home'>
+                                    <FaHome></FaHome>
+                                    User Home
+                                </NavLink></li>
 
-                            <li><NavLink to='/dashboard/payment'>
-                                <FaWallet></FaWallet>
-                                Payment history
-                            </NavLink>
-                            </li>
+                                <li><NavLink to='/dashboard/payment'>
+                                    <FaWallet></FaWallet>
+                                    Payment history
+                                </NavLink>
+                                </li>
+                                <li><NavLink to='/dashboard/enrolled-classes'>
+                                    <FaWallet></FaWallet>
+                                    My Enrolled Classes
+                                </NavLink>
+                                </li>
 
-                            <li><NavLink to='/dashboard/my-selected-class'>
-                                <FaCartArrowDown></FaCartArrowDown>
-                                <div className="flex gap-2">
-                                    My Selected Classes
-                                    <span className="badge badge-secondary">+{classCart?.length || 0}</span>
-                                </div>
-                            </NavLink>
-                            </li>
+                                <li><NavLink to='/dashboard/my-selected-class'>
+                                    <FaCartArrowDown></FaCartArrowDown>
+                                    <div className="flex gap-2">
+                                        My Selected Classes
+                                        <span className="badge badge-secondary">+{classCart?.length || 0}</span>
+                                    </div>
+                                </NavLink>
+                                </li>
 
-                        </>
-                        : 
-                        <></>
+                            </>
+                                :
+                                <></>
                         }
+
+
+                        <div className="divider"></div>
+                        <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
+                       
 
                     </ul>
 

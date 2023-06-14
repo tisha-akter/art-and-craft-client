@@ -8,7 +8,7 @@ const useAdmin = () => {
     const { refetch, data: role, isLoading: isAdminLoading = [] } = useQuery({
         queryKey: ['role', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users/admin/${user?.email}`)
+            const res = await fetch(`https://summer-camp-scl-server-tisha-akter.vercel.app/users/admin/${user?.email}`)
             return res.json();
         },
       })

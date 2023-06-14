@@ -5,6 +5,7 @@ import { FaCartArrowDown, FaUserCircle } from "react-icons/fa";
 import useSelectedClass from "../../../hooks/useSelectedClass";
 
 
+
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);

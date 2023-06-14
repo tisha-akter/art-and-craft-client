@@ -28,7 +28,7 @@ const Classes = () => {
         console.log(classes)
         if (user && user.email) {
             const SelectClass = { classId: classes._id, name: classes.class_name, image: classes.image, price: classes.price, email: user.email }
-            fetch('http://localhost:5000/selectedClasses', {
+            fetch('https://summer-camp-scl-server-tisha-akter.vercel.app/selectedClasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

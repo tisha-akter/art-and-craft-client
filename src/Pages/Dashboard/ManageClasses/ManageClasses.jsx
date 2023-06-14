@@ -12,7 +12,7 @@ const ManageClasses = () => {
     const handleApprove = async (classId) => {
         setLoading(true);
 
-        const url = `http://localhost:5000/classesInfo/update/status/${classId}`;
+        const url = `https://summer-camp-scl-server-tisha-akter.vercel.app/classesInfo/update/status/${classId}`;
         const payload = { status: 'approved' };
 
         try {
@@ -56,7 +56,7 @@ const ManageClasses = () => {
 
             // if the admin provided feedbak update the class status to denied
             if (!isCancelled) {
-                const url = `http://localhost:5000/classesInfo/update/status/${classId}`;
+                const url = `https://summer-camp-scl-server-tisha-akter.vercel.app/classesInfo/update/status/${classId}`;
                 const payload = {
                     status: 'denied',
                     feedback: feedback || '',

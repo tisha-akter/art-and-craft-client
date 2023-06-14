@@ -26,7 +26,7 @@ const AddClass = () => {
             status: 'pending',
         };
 
-         fetch('http://localhost:5000/classesInfo', {
+         fetch('https://summer-camp-scl-server-tisha-akter.vercel.app/classesInfo', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -155,7 +155,7 @@ const AddClass = () => {
                     />
                 </div>
 
-                <input className="btn btn-sm mt-4 ml-4" type="submit" value="Add Class" />
+                <input className="btn btn-sm mt-4 ml-4 mb-5" type="submit" value="Add Class" />
             </form>
         </div>
     );
