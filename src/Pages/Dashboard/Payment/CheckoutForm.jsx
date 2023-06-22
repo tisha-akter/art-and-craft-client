@@ -99,7 +99,7 @@ const CheckoutForm = ({ classCart, price }) => {
                     // display confirm 
 
                 }
-            })
+            });
 
         }
 

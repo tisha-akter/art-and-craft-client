@@ -1,6 +1,6 @@
 ...
 
-<!-- # [live site]() -->
+# [live site](https://summer-camp-scl.web.app/classes)
 
 
 # Art & Craft (Summer Camp School Project)
